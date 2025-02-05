@@ -31,12 +31,11 @@ def hello():
         return render_template('hello.html', name = name)
     else:
         print('Request for hello page received with no name or blank name -- redirecting')
-        return redirect(url_for('index'))
-
-        inoput_document = {
+        input_document = {
             "input": name
         }
         mongodb_collection.insert_one(input_document)
+        return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run()
