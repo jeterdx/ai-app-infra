@@ -47,7 +47,7 @@ def hello():
 
 def call_aoai(name):
     response = azure_openai_client.chat.completions.create(
-        model=os.getenv("   "),
+        model=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": f"Write a 10 words explanation about {name}."},
